@@ -1,0 +1,113 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    var div = $("button");  
+    div.animate({left: '100px'}, "slow");
+    div.animate({fontSize: '2em'}, "slow");
+
+
+  $("button").click(function(){
+
+    
+
+    $.get( "https://official-joke-api.appspot.com/random_joke", function(result,status){
+
+var obj = JSON.stringify(result);  
+
+var obj1 = JSON.parse(obj);
+   document.getElementById("demo").innerHTML=obj1.setup; 
+        
+   $("#demo").fadeIn("slow");
+   document.getElementById("demo1").innerHTML=obj1.punchline+"&#128514";
+
+    $("#demo1").fadeIn(3000);
+});
+});
+});
+
+
+</script>
+<style>
+
+#demo{
+    font-size: 3em;
+
+    color: blueviolet;
+}
+#demo1{
+
+    font-size: 2em;
+    
+    color:darkgreen
+}
+h2{
+
+    border-radius: 25px;
+         background:grey;
+         padding: 20px; 
+         width: 500px;
+         height: 30px;
+         color: white; 
+}
+button{
+    border-radius: 25px;
+}
+p{
+ 
+ font-size: 2.5em;
+
+ font-family: comic sans-serif;
+}
+#x{
+
+    font-size: 4em;
+
+
+}
+</style>
+</head>
+<body>
+    <center><h1 id="x">Welcome To Laugh<br> Factory ! </h1></center>
+    <p>
+            Looking for funny jokes? &#129488  
+            Settle in: You're in the right place.&#128513
+            From clean knock-knock jokes and the top corny jokes to hilarious one-liners and clever riddles, 
+             we've got the jokes guaranteed to bring on serious laughs.&#129315
+    </p>
+<div id="main">
+</div>
+
+<button>Click Me</button>
+<br>
+
+
+<br><br>
+<br>
+<div id="demo">
+
+</div>
+<br>
+<div id="demo1">
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
